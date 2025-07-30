@@ -398,11 +398,33 @@ export const useCartStore = () => {
   )
 
   const addToCart = (product: Product, quantity = 1) => {
+    // Validate product
+    if (!product || !product.id) {
+      throw new Error('Invalid product')
+    }
+
+    // Check stock availability
+    if (product.stock <= 0) {
+      throw new Error('Product is out of stock')
+    }
+
     const existingItem = items.value.find(item => item.product.id === product.id)
     
     if (existingItem) {
-      existingItem.quantity += quantity
+      const newQuantity = existingItem.quantity + quantity
+      
+      // Check if new quantity exceeds stock
+      if (newQuantity > product.stock) {
+        throw new Error(`Only ${product.stock} items available in stock`)
+      }
+      
+      existingItem.quantity = newQuantity
     } else {
+      // Check if requested quantity exceeds stock
+      if (quantity > product.stock) {
+        throw new Error(`Only ${product.stock} items available in stock`)
+      }
+      
       items.value.push({ product, quantity })
     }
   }
@@ -420,6 +442,10 @@ export const useCartStore = () => {
       if (quantity <= 0) {
         removeFromCart(productId)
       } else {
+        // Check stock availability
+        if (quantity > item.product.stock) {
+          throw new Error(`Only ${item.product.stock} items available in stock`)
+        }
         item.quantity = quantity
       }
     }
@@ -429,6 +455,15 @@ export const useCartStore = () => {
     items.value = []
   }
 
+  const getItemQuantity = (productId: string) => {
+    const item = items.value.find(item => item.product.id === productId)
+    return item ? item.quantity : 0
+  }
+
+  const isInCart = (productId: string) => {
+    return items.value.some(item => item.product.id === productId)
+  }
+
   return {
     items: readonly(items),
     totalItems,
@@ -436,7 +471,9 @@ export const useCartStore = () => {
     addToCart,
     removeFromCart,
     updateQuantity,
-    clearCart
+    clearCart,
+    getItemQuantity,
+    isInCart
   }
 }
 

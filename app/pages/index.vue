@@ -4,11 +4,31 @@ definePageMeta({
 })
 
 const { featuredProducts } = useProductStore()
-const { addToCart } = useCartStore()
+const { addToCart, isInCart, getItemQuantity } = useCartStore()
+const toast = useToast()
 
 const addToCartHandler = (product: any) => {
-  addToCart(product)
-  // You could add a toast notification here
+  try {
+    addToCart(product)
+    
+    // Show success toast notification
+    toast.add({
+      title: 'Added to Cart!',
+      description: `${product.name} has been added to your cart`,
+      icon: 'i-heroicons-shopping-cart',
+      color: 'green',
+      timeout: 3000
+    })
+  } catch (error) {
+    // Show error toast with specific error message
+    toast.add({
+      title: 'Cannot Add to Cart',
+      description: error.message || 'Failed to add item to cart. Please try again.',
+      icon: 'i-heroicons-exclamation-triangle',
+      color: 'red',
+      timeout: 4000
+    })
+  }
 }
 </script>
 
@@ -61,26 +81,65 @@ const addToCartHandler = (product: any) => {
             :key="product.id"
             class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
-            <div class="aspect-w-1 aspect-h-1">
+            <div class="aspect-w-1 aspect-h-1 relative">
               <NuxtImg 
                 :src="product.image" 
                 :alt="product.name"
                 class="w-full h-64 object-cover"
               />
+              <!-- Stock badge -->
+              <div class="absolute top-2 right-2">
+                <UBadge 
+                  v-if="product.stock <= 5 && product.stock > 0"
+                  color="orange"
+                  variant="solid"
+                  size="sm"
+                >
+                  Only {{ product.stock }} left
+                </UBadge>
+                <UBadge 
+                  v-else-if="product.stock === 0"
+                  color="red"
+                  variant="solid"
+                  size="sm"
+                >
+                  Out of Stock
+                </UBadge>
+              </div>
+              <!-- In cart indicator -->
+              <div v-if="isInCart(product.id)" class="absolute top-2 left-2">
+                <UBadge 
+                  color="green"
+                  variant="solid"
+                  size="sm"
+                >
+                  {{ getItemQuantity(product.id) }} in cart
+                </UBadge>
+              </div>
             </div>
             <div class="p-6">
               <h3 class="text-lg font-semibold text-gray-900 mb-2">{{ product.name }}</h3>
               <p class="text-gray-600 mb-4">{{ product.description }}</p>
-              <div class="flex items-center justify-between">
+              <div class="flex items-center justify-between mb-4">
                 <span class="text-2xl font-bold text-blue-600">${{ product.price }}</span>
-                <UButton 
-                  @click="addToCartHandler(product)"
-                  color="blue"
-                  size="sm"
-                >
-                  Add to Cart
-                </UButton>
+                <div class="flex items-center space-x-1">
+                  <UIcon name="i-heroicons-star-solid" class="w-4 h-4 text-yellow-400" />
+                  <span class="text-sm text-gray-600">{{ product.rating }} ({{ product.reviews }})</span>
+                </div>
               </div>
+              <UButton 
+                @click="addToCartHandler(product)"
+                :disabled="product.stock === 0"
+                :color="product.stock === 0 ? 'gray' : 'blue'"
+                size="sm"
+                block
+              >
+                <UIcon 
+                  :name="product.stock === 0 ? 'i-heroicons-x-circle' : 'i-heroicons-shopping-cart'" 
+                  class="w-4 h-4 mr-2" 
+                />
+                {{ product.stock === 0 ? 'Out of Stock' : 'Add to Cart' }}
+              </UButton>
             </div>
           </div>
         </div>

@@ -107,7 +107,7 @@ const route = useRoute()
 const { orders } = useOrderStore()
 
 // Get order from query parameter
-const orderId = route.query.orderId as string
+const orderId = String(route.query.orderId);
 const order = computed(() => {
   if (orderId) {
     return orders.value.find(o => o.id === orderId)
