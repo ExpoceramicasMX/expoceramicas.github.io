@@ -1,28 +1,49 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxt/image'],
-  css: ['~/app/assets/css/main.css'],
   
-  // Static site generation for GitHub Pages
-  nitro: {
-    prerender: {
-      routes: ['/']
+  modules: [
+    '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
+    '@pinia/nuxt',
+    '@nuxt/image',
+    '@nuxtjs/device',
+    '@nuxtjs/color-mode'
+  ],
+  
+  css: [
+    'bootstrap/dist/css/bootstrap.min.css',
+    '@fortawesome/fontawesome-free/css/all.min.css',
+    'aos/dist/aos.css',
+    'swiper/css',
+    'swiper/css/navigation',
+    'swiper/css/pagination',
+    'assets/css/main.css'
+  ],
+  
+  plugins: [
+    '~/plugins/bootstrap.js',
+    '~/plugins/aos.client.js',
+    '~/plugins/swiper.client.js'
+  ],
+  
+  googleFonts: {
+    families: {
+      Inter: [300, 400, 500, 600, 700],
+      Poppins: [300, 400, 500, 600, 700]
     }
   },
   
-  // GitHub Pages deployment configuration
-  // For user/organization sites (username.github.io), baseURL should be '/'
-  app: {
-    baseURL: '/',
-    buildAssetsDir: 'assets/'
+  colorMode: {
+    preference: 'light',
+    fallback: 'light',
+    classSuffix: ''
   },
   
-  // SSR configuration for static generation
-  ssr: true,
-  
-  ui: {
-    prefix: 'Nuxt'
+  image: {
+    quality: 80,
+    format: ['webp']
   }
+
+  
 })

@@ -1,30 +1,26 @@
 {
-  "name": "expoceramicas-website",
+  "name": "expoceramicas",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxt/eslint": "^1.6.0",
-    "@nuxt/image": "^1.10.0",
-    "@nuxt/ui": "^3.2.0",
-    "chart.js": "^4.5.0",
-    "eslint": "^9.31.0",
-    "nuxt": "^3.13.0",
-    "typescript": "^5.8.3",
-    "vue": "^3.5.17",
-    "vue-chartjs": "^5.3.2",
-    "vue-router": "^4.5.1"
+    "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.0"
+    "nuxt": "^4.0.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
+    "@nuxt/image": "^1.8.0",
+    "@nuxtjs/color-mode": "^3.4.0",
+    "@nuxtjs/device": "^3.1.1",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@pinia/nuxt": "^0.5.0",
+    "@vueuse/nuxt": "^10.11.0",
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.0",
+    "swiper": "^11.0.0",
+    "vue": "^3.5.0"
   }
 }
