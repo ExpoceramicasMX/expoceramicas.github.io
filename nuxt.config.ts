@@ -18,13 +18,17 @@ export default defineNuxtConfig({
     'swiper/css',
     'swiper/css/navigation',
     'swiper/css/pagination',
-    'assets/css/main.css'
+    'assets/css/main.css',
+    'assets/css/swiper.css',
+    'assets/css/all.min.css',
+    'assets/css/aos.css'
   ],
   
   plugins: [
     '~/plugins/bootstrap.js',
     '~/plugins/aos.client.js',
-    '~/plugins/swiper.client.js'
+    '~/plugins/swiper.client.js',
+    '~/plugins/popper.min.js'
   ],
   
   googleFonts: {

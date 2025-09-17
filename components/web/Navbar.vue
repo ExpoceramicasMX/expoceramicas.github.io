@@ -1,9 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
     <div class="container">
       <!-- Logo -->
       <a class="navbar-brand" href="#">
-        <img src="#" alt="Store Logo" height="32">
+        Expoceramicas MX
       </a>
 
       <!-- Hamburger button for mobile -->
@@ -16,28 +16,36 @@
         <!-- Navigation Links -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="/">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Shop</a>
+            <a class="nav-link" href="/productos">Productos</a>
           </li>
+          <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="dropdown-menu" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Categoria</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-menu">
+                            <a class="dropdown-item" href="#">Pisos y Recubrimientos</a>
+                            <a class="dropdown-item" href="#">Baños</a>
+                            <a class="dropdown-item" href="#">Cocina</a>
+                            <a class="dropdown-item" href="#">Griferia</a>
+                            <a class="dropdown-item" href="#">Material de Instalación</a>
+                        </div>
+                    </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Categories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Deals</a>
+            <a class="nav-link" href="/inspirate">Inspirate</a>
           </li>
         </ul>
 
         <!-- Search Form -->
         <form class="d-flex me-3">
-          <input class="form-control" type="search" placeholder="Search..." aria-label="Search">
+          <input class="form-control" type="search" placeholder="Buscar producto..." aria-label="Search">
         </form>
 
         <!-- Cart Button -->
         <div class="d-flex align-items-center">
           <button class="btn btn-link position-relative me-3">
-            <i class="bi bi-cart"></i>
+            <i class="fa-solid fa-cart-shopping"></i>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
               0
             </span>

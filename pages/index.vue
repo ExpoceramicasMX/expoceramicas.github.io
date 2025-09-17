@@ -14,6 +14,7 @@ definePageMeta({
   <main>
     <section class="hero-slider">
       <Swiper
+      id="header-slider"
         :modules="[Autoplay, Pagination, Navigation]"
         :slides-per-view="1"
         :loop="true"
@@ -28,33 +29,33 @@ definePageMeta({
       >
         <SwiperSlide>
           <div class="slide">
-            <img src="#" alt="Slide 1">
-            <div class="slide-content">
-              <h1>Welcome to Expoceramicas</h1>
-              <p>Discover our exclusive collection of ceramic tiles</p>
-              <NuxtLink to="/products" class="btn btn-primary">View Products</NuxtLink>
+            <img src="https://porcelanite.com.mx/wp-content/uploads/3149_PORCELANITE_LAURET_HQ.webp" alt="Slide 1">
+            <div class="slide-content text-white shadow">
+              <h1 class="shdaow">Bienvenido a Expoceramicas</h1>
+              <p class="shadow">Tu lugar para conocer mas sobre como renovar tu hogar.</p>
+              <NuxtLink to="/products" class="btn btn-primary">Ver Productos</NuxtLink>
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide">
-            <img src="#" alt="Slide 2">
-            <div class="slide-content">
-              <h1>Premium Quality Ceramics</h1>
-              <p>For your home and commercial projects</p>
-              <NuxtLink to="/contact" class="btn btn-primary">Contact Us</NuxtLink>
+            <img src="https://porcelanite.com.mx/wp-content/uploads/CARRARA_NEW_PORCELANITE_HQ.webp" alt="Slide 2">
+            <div class="slide-content text-white shadow">
+              <h1>Encuentra las mejores marcas y mejores productos</h1>
+              <p>Conoce mas antes de comprar lo que no necesitas.</p>
+              <NuxtLink to="/inspirate" class="btn btn-primary">Ver Mas</NuxtLink>
             </div>
           </div>
         </SwiperSlide>
 
         <SwiperSlide>
           <div class="slide">
-            <img src="#" alt="Slide 3">
-            <div class="slide-content">
-              <h1>Expert Design Consultation</h1>
-              <p>Let us help you find the perfect tiles</p>
-              <NuxtLink to="/services" class="btn btn-primary">Our Services</NuxtLink>
+            <img src="https://porcelanite.com.mx/wp-content/uploads/NATURAWOOD_20x90_NEW_PORCELANITE_HQ.webp" alt="Slide 3">
+            <div class="slide-content text-white shadow">
+              <h1><em>Inspirate</em> con nuestro blog</h1>
+              <p>Encuentra la inspiracion que necesitas para crear los mejores espacios.</p>
+              <NuxtLink to="/services" class="btn btn-primary">Visita el blog</NuxtLink>
             </div>
           </div>
         </SwiperSlide>
@@ -64,16 +65,18 @@ definePageMeta({
     <section>
       <div class="container-fluid-custom">
         <div class="row">
-          <div class="col-12">
-            <h2>Productos Destacados</h2>
+          <div class="col-12 py-5">
+            <h2>Productos Populares</h2>
           </div>
           <div class="col-12">
             <div class="row">
               <Swiper
+                id="product-slider"
                 :modules="[Autoplay, Pagination, Navigation]"
                 :slides-per-view="4"
                 :space-between="30"
                 :loop="true"
+                :navigation="true"
                 :autoplay="{
                   delay: 3000,
                   disableOnInteraction: false
@@ -99,10 +102,10 @@ definePageMeta({
               >
                 <SwiperSlide v-for="i in 8" :key="i">
                   <div class="product">
-                    <img src="#" :alt="`Product ${i}`" />
-                    <h3>Product {{ i }}</h3>
+                    <img src="https://porcelanite.com.mx/wp-content/uploads/LAURET-CAFE_01-1-1024x1024.webp" :alt="`Product ${i}`" />
+                    <h3>Lauret {{ i }}</h3>
                     <p>Descripción del producto {{ i }}</p>
-                    <a href="#">Ver más</a>
+                    <a href="#" class="btn btn-primary">Ver más</a>
                   </div>
                 </SwiperSlide>
               </Swiper>
@@ -112,8 +115,8 @@ definePageMeta({
       </div>
     </section>
 
-    <section>
-      <div class="container">
+    <section id="productos-populares">
+      <div class="container py-5">
         <div class="row">
           <div class="col-12">
             <h2>Productos Destacados</h2>
@@ -121,15 +124,15 @@ definePageMeta({
 
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <div class="product card">
+          <div class="col-md-3 mb-5" v-for="i in 8" :key="i">
+            <div class="product card" >
               <div class="card-body">
-                <img src="#" alt="Product 1" />
-              <h3 class="card-title">Product 1</h3>
+                <img src="https://porcelanite.com.mx/wp-content/uploads/LAURET-CAFE_01-1-1024x1024.webp"  class="img-fluid" :alt="`Product ${i}`" />
+              <h3 class="card-title">Product {{ i }}</h3>
 
-              <p class="card-text">Descripción del producto 1</p>
+              <p class="card-text">Descripción del producto {{ i }}</p>
 
-              <a href="#">Ver más</a>
+              <a class="btn btn-primary" href="#">Ver más</a>
               </div>
             </div>
           </div>
