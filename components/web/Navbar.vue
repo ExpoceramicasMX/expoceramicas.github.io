@@ -19,7 +19,7 @@
             <a class="nav-link" href="/">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/productos">Productos</a>
+            <a class="nav-link" href="/productc">Productos</a>
           </li>
           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="dropdown-menu" data-bs-toggle="dropdown"
