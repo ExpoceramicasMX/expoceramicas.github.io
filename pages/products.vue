@@ -1,5 +1,5 @@
 <template>
     <div>
-        <h1>Product {{$router}}</h1>
+        <h1>Productos</h1>
     </div>
 </template>

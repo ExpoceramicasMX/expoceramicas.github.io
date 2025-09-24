@@ -2,6 +2,18 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   
+  app: {
+    head: {
+      title: 'Expoceramcias', // default fallback title
+      htmlAttrs: {
+        lang: 'en',
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ]
+    }
+  },
+
   modules: [
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
@@ -47,7 +59,37 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['webp']
-  }
+  },
+
+ runtimeConfig: {
+    // Variables privadas (solo servidor)
+    woocommerceUrl: process.env.WOOCOMMERCE_URL,
+    woocommerceKey: process.env.WOOCOMMERCE_KEY,
+    woocommerceSecret: process.env.WOOCOMMERCE_SECRET,
+    public: {
+      // Variables públicas (cliente y servidor)
+      apiBase: '/api'
+    }
+  },
+
+    nitro: {
+    experimental: {
+      wasm: true
+    }
+  },
+  vite: {
+    define: {
+      global: 'globalThis',
+    },
+    optimizeDeps: {
+      include: ['@woocommerce/woocommerce-rest-api']
+    },
+    build: {
+      rollupOptions: {
+        external: ['form-data']
+      }
+    }
+  },
 
   
 })

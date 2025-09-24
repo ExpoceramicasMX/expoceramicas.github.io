@@ -3,7 +3,7 @@
     <div class="container">
       <!-- Logo -->
       <a class="navbar-brand" href="#">
-        Expoceramicas MX
+        <strong><em>Expoceramicas</em></strong>
       </a>
 
       <!-- Hamburger button for mobile -->
@@ -19,7 +19,7 @@
             <a class="nav-link" href="/">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/productc">Productos</a>
+            <a class="nav-link" href="/products">Productos</a>
           </li>
           <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" id="dropdown-menu" data-bs-toggle="dropdown"
@@ -33,28 +33,22 @@
                         </div>
                     </li>
           <li class="nav-item">
-            <a class="nav-link" href="/inspirate">Inspirate</a>
+            <a class="nav-link" href="/blog">Inspirate</a>
           </li>
         </ul>
 
         <!-- Search Form -->
         <form class="d-flex me-3">
           <input class="form-control" type="search" placeholder="Buscar producto..." aria-label="Search">
+          <button class="btn btn-primary" type="submit"><i class="fa-solid fa-search"></i></button>
         </form>
 
         <!-- Cart Button -->
         <div class="d-flex align-items-center">
-          <button class="btn btn-link position-relative me-3">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              0
-            </span>
-          </button>
-
           <!-- User Account Button -->
-          <button class="btn btn-link">
-            <i class="bi bi-person"></i>
-          </button>
+          <a href="/login" class="btn btn-link">
+            <i class="fa-solid fa-user"></i>
+          </a>
         </div>
       </div>
     </div>

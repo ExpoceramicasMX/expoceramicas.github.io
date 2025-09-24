@@ -6,8 +6,19 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 definePageMeta({
-  layout: 'web'
+  layout: 'web',
 })
+
+useSeoMeta({
+  title: 'Inicio - Expoceramicas',
+  ogTitle: 'Inicio - Expoceramicas',
+  description: 'This is my amazing site, let me tell you all about it.',
+  ogDescription: 'This is my amazing site, let me tell you all about it.',
+  ogImage: 'https://example.com/image.png',
+  twitterCard: 'summary_large_image',
+})
+
+
 </script>
 
 <template>
@@ -62,7 +73,19 @@ definePageMeta({
       </Swiper>
     </section>
 
-    <section>
+    <section id="sobre-nosotros">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Sobre Nosotros</h1>
+            <hr>
+            <p>Expoceramicas es una tienda online especializada en la venta de productos de cerámica. Nuestro objetivo es brindar a nuestros clientes una experiencia de compra única, ofreciendo una amplia gama de productos de alta calidad a precios competitivos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos-populares">
       <div class="container-fluid-custom">
         <div class="row">
           <div class="col-12 py-5">
@@ -110,6 +133,23 @@ definePageMeta({
                 </SwiperSlide>
               </Swiper>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog-post">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Los Mejores Pisos Para Exteriores</h2>
+            <p>
+              lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, voluptas.
+            </p>
+          </div>
+
+          <div class="col-md-6">
+            <img src="https://porcelanite.com.mx/wp-content/uploads/LAURET-CAFE_01-1-1024x1024.webp" alt="Sobre Nosotros" class="img-fluid">
           </div>
         </div>
       </div>
