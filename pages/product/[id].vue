@@ -11,8 +11,8 @@ const productId = route.params.id
 const config = useRuntimeConfig()
 const WOOCOMMERCE_CONFIG = {
   url: config.public.woocommerceUrl,
-  consumerKey: config.public.woocommerceKey,
-  consumerSecret: config.public.woocommerceSecret
+  consumerKey: config.woocommerceKey,
+  consumerSecret: config.woocommerceSecret
 }
 
 // Estados reactivos

@@ -51,10 +51,12 @@ export default defineNuxtConfig({
   },
   
   runtimeConfig: {
+    // Variables privadas (solo servidor)
+    woocommerceKey: process.env.NUXT_WOOCOMMERCE_KEY,
+    woocommerceSecret: process.env.NUXT_WOOCOMMERCE_SECRET,
     public: {
-      woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL,
-      woocommerceKey: process.env.NUXT_PUBLIC_WOOCOMMERCE_KEY,
-      woocommerceSecret: process.env.NUXT_PUBLIC_WOOCOMMERCE_SECRET
+      // Variables públicas (cliente y servidor)
+      woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL
     }
   },
   
