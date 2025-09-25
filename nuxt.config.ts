@@ -50,6 +50,14 @@ export default defineNuxtConfig({
     }
   },
   
+  runtimeConfig: {
+    public: {
+      woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL,
+      woocommerceKey: process.env.NUXT_PUBLIC_WOOCOMMERCE_KEY,
+      woocommerceSecret: process.env.NUXT_PUBLIC_WOOCOMMERCE_SECRET
+    }
+  },
+  
   colorMode: {
     preference: 'light',
     fallback: 'light',
@@ -59,17 +67,6 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['webp']
-  },
-
- runtimeConfig: {
-    // Variables privadas (solo servidor)
-    woocommerceUrl: process.env.WOOCOMMERCE_URL,
-    woocommerceKey: process.env.WOOCOMMERCE_KEY,
-    woocommerceSecret: process.env.WOOCOMMERCE_SECRET,
-    public: {
-      // Variables públicas (cliente y servidor)
-      apiBase: '/api'
-    }
   },
 
     nitro: {
