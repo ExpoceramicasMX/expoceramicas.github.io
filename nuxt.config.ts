@@ -2,6 +2,18 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   
+  app: {
+    head: {
+      title: 'Expoceramcias', // default fallback title
+      htmlAttrs: {
+        lang: 'en',
+      },
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ]
+    }
+  },
+
   modules: [
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
@@ -18,19 +30,33 @@ export default defineNuxtConfig({
     'swiper/css',
     'swiper/css/navigation',
     'swiper/css/pagination',
-    'assets/css/main.css'
+    'assets/css/main.css',
+    'assets/css/swiper.css',
+    'assets/css/all.min.css',
+    'assets/css/aos.css'
   ],
   
   plugins: [
     '~/plugins/bootstrap.js',
     '~/plugins/aos.client.js',
-    '~/plugins/swiper.client.js'
+    '~/plugins/swiper.client.js',
+    '~/plugins/popper.min.js'
   ],
   
   googleFonts: {
     families: {
       Inter: [300, 400, 500, 600, 700],
       Poppins: [300, 400, 500, 600, 700]
+    }
+  },
+  
+  runtimeConfig: {
+    // Variables privadas (solo servidor)
+    woocommerceKey: process.env.NUXT_WOOCOMMERCE_KEY,
+    woocommerceSecret: process.env.NUXT_WOOCOMMERCE_SECRET,
+    public: {
+      // Variables públicas (cliente y servidor)
+      woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL
     }
   },
   
@@ -43,7 +69,26 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['webp']
-  }
+  },
+
+    nitro: {
+    experimental: {
+      wasm: true
+    }
+  },
+  vite: {
+    define: {
+      global: 'globalThis',
+    },
+    optimizeDeps: {
+      include: ['@woocommerce/woocommerce-rest-api']
+    },
+    build: {
+      rollupOptions: {
+        external: ['form-data']
+      }
+    }
+  },
 
   
 })

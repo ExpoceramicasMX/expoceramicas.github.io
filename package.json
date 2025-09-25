@@ -18,10 +18,12 @@
             "@nuxtjs/google-fonts": "^3.2.0",
             "@pinia/nuxt": "^0.5.0",
             "@vueuse/nuxt": "^10.11.0",
+            "@woocommerce/woocommerce-rest-api": "^1.0.2",
             "aos": "^2.3.4",
             "bootstrap": "^5.3.0",
             "nuxt": "^3.17.7",
             "swiper": "^11.0.0",
-            "vue": "^3.5.0"
+            "vue": "^3.5.0",
+            "vue3-popper": "^1.5.0"
       }
 }

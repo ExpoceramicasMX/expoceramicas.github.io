@@ -21,7 +21,7 @@
                 <label for="email" class="form-label">Email address</label>
                 <div class="input-group">
                   <span class="input-group-text">
-                    <i class="bi bi-envelope"></i>
+                    <i class="fa-solid fa-envelope"></i>  
                   </span>
                   <input 
                     type="email" 
@@ -38,7 +38,7 @@
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group">
                   <span class="input-group-text">
-                    <i class="bi bi-lock"></i>
+                    <i class="fa-solid fa-lock"></i>
                   </span>
                   <input 
                     type="password" 
@@ -56,16 +56,17 @@
                   <input type="checkbox" class="form-check-input" id="remember">
                   <label class="form-check-label" for="remember">Remember me</label>
                 </div>
-                <a href="#" class="text-primary text-decoration-none">Forgot password?</a>
+                <a href="#" class="text-primary text-decoration-none">Olvide mi contraseñ?</a>
               </div>
 
               <button type="submit" class="btn btn-primary w-100 py-2 mb-4">
-                Sign In
+              Iniciar Sesion
               </button>
 
               <div class="text-center">
-                <p class="mb-0">Don't have an account? 
-                  <a href="#" class="text-primary text-decoration-none">Sign up</a>
+                <p class="mb-0">
+        ¿No tienes cuenta? 
+                  <a href="/register" class="text-primary text-decoration-none">Crea una cuenta</a>
                 </p>
               </div>
             </form>
