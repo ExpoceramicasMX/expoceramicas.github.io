@@ -25,11 +25,15 @@
     z-index: 200;
     display: block;
     position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 0 15px;
   }
 
   .slide-content h1, .slide-content p {
     text-shadow: 5px 5px 20px #555;
-    
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Header Slider */
