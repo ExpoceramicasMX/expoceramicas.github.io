@@ -36,8 +36,7 @@ useSeoMeta({
         }"
         :navigation="true"
       >
-        <SwiperSlide>
-            <img src="https://porcelanite.com.mx/wp-content/uploads/3149_PORCELANITE_LAURET_HQ.webp" alt="Slide 1">
+        <SwiperSlide id="slide-1">
             <div class="slide-content text-white">
               <h1>Bienvenido a Expoceramicas</h1>
               <p>Tu lugar para conocer mas sobre como renovar tu hogar.</p>
@@ -45,8 +44,7 @@ useSeoMeta({
             </div>
         </SwiperSlide>
 
-        <SwiperSlide>
-            <img src="https://porcelanite.com.mx/wp-content/uploads/CARRARA_NEW_PORCELANITE_HQ.webp" alt="Slide 2">
+        <SwiperSlide id="slide-2">
             <div class="slide-content text-white">
               <h1>Encuentra las mejores marcas y mejores productos</h1>
               <p>Conoce mas antes de comprar lo que no necesitas.</p>
@@ -54,8 +52,7 @@ useSeoMeta({
             </div>
         </SwiperSlide>
 
-        <SwiperSlide>
-            <img src="https://porcelanite.com.mx/wp-content/uploads/NATURAWOOD_20x90_NEW_PORCELANITE_HQ.webp" alt="Slide 3">
+        <SwiperSlide id="slide-3">
             <div class="slide-content text-white">
               <h1><em>Inspirate</em> con nuestro blog</h1>
               <p>Encuentra la inspiracion que necesitas para crear los mejores espacios.</p>

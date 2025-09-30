@@ -38,13 +38,25 @@
     display: block;
     position: relative;
   }
-
-  #header-slider .swiper-slide img {
-
-    position: absolute !important;
-    right: 0;
-    top: 0;
+#header-slider #slide-1 {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+    background-image: url('https://porcelanite.com.mx/wp-content/uploads/3149_PORCELANITE_LAURET_HQ.webp');
+    background-size: cover;
+    background-position: center;
   }
+  #header-slider #slide-2 {
+    background: linear-gradient(135deg, #1e3a8a 0%, var(--primary-color) 100%);
+    background-image: url('https://porcelanite.com.mx/wp-content/uploads/CARRARA_NEW_PORCELANITE_HQ.webp');
+    background-size: cover;
+    background-position: center;
+  }
+  #header-slider #slide-3 {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+    background-image: url('https://porcelanite.com.mx/wp-content/uploads/NATURAWOOD_20x90_NEW_PORCELANITE_HQ.webp');
+    background-size: cover;
+    background-position: center;
+  }
+
   /* Product Slider */
   #product-slider
  {
