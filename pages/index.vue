@@ -12,13 +12,11 @@ definePageMeta({
 useSeoMeta({
   title: 'Inicio - Expoceramicas',
   ogTitle: 'Inicio - Expoceramicas',
-  description: 'This is my amazing site, let me tell you all about it.',
-  ogDescription: 'This is my amazing site, let me tell you all about it.',
-  ogImage: 'https://example.com/image.png',
+  description: 'Expoceramicas, Pisos y Azulejos de Mexico, tu lugar para renovar tu hogar.',
+  ogDescription: 'Expoceramicas, Pisos y Azulejos de Mexico, tu lugar para renovar tu hogar.',
+  ogImage: 'https://expoceramicas.com.mx/og-image.png',
   twitterCard: 'summary_large_image',
 })
-
-
 </script>
 
 <template>
@@ -39,36 +37,30 @@ useSeoMeta({
         :navigation="true"
       >
         <SwiperSlide>
-          <div class="slide">
             <img src="https://porcelanite.com.mx/wp-content/uploads/3149_PORCELANITE_LAURET_HQ.webp" alt="Slide 1">
-            <div class="slide-content text-white shadow">
-              <h1 class="shdaow">Bienvenido a Expoceramicas</h1>
-              <p class="shadow">Tu lugar para conocer mas sobre como renovar tu hogar.</p>
+            <div class="slide-content text-white">
+              <h1>Bienvenido a Expoceramicas</h1>
+              <p>Tu lugar para conocer mas sobre como renovar tu hogar.</p>
               <NuxtLink to="/products" class="btn btn-primary">Ver Productos</NuxtLink>
             </div>
-          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div class="slide">
             <img src="https://porcelanite.com.mx/wp-content/uploads/CARRARA_NEW_PORCELANITE_HQ.webp" alt="Slide 2">
-            <div class="slide-content text-white shadow">
+            <div class="slide-content text-white">
               <h1>Encuentra las mejores marcas y mejores productos</h1>
               <p>Conoce mas antes de comprar lo que no necesitas.</p>
-              <NuxtLink to="/inspirate" class="btn btn-primary">Ver Mas</NuxtLink>
+              <NuxtLink to="/blog" class="btn btn-primary">Ver Mas</NuxtLink>
             </div>
-          </div>
         </SwiperSlide>
 
         <SwiperSlide>
-          <div class="slide">
             <img src="https://porcelanite.com.mx/wp-content/uploads/NATURAWOOD_20x90_NEW_PORCELANITE_HQ.webp" alt="Slide 3">
-            <div class="slide-content text-white shadow">
+            <div class="slide-content text-white">
               <h1><em>Inspirate</em> con nuestro blog</h1>
               <p>Encuentra la inspiracion que necesitas para crear los mejores espacios.</p>
-              <NuxtLink to="/services" class="btn btn-primary">Visita el blog</NuxtLink>
+              <NuxtLink to="/contacto" class="btn btn-primary">Visita el blog</NuxtLink>
             </div>
-          </div>
         </SwiperSlide>
       </Swiper>
     </section>

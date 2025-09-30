@@ -35,6 +35,8 @@
   /* Header Slider */
   #header-slider {
     height: 800px !important;
+    display: block;
+    position: relative;
   }
 
   #header-slider .swiper-slide img {
