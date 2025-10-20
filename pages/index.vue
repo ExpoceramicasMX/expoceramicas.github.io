@@ -31,33 +31,84 @@ useSeoMeta({
           delay: 5000,
           disableOnInteraction: false,
         }"
-        :pagination="{
+        :pagination="{                            
           clickable: true,
         }"
         :navigation="true"
       >
-        <SwiperSlide id="slide-1">
-            <div class="slide-content text-white">
-              <h1>Bienvenido a Expoceramicas</h1>
-              <p>Tu lugar para conocer mas sobre como renovar tu hogar.</p>
-              <NuxtLink to="/products" class="btn btn-primary">Ver Productos</NuxtLink>
+        <SwiperSlide id="slide-1" class="hero-slide">
+          <div class="hero-overlay text-center">
+            <div class="sale-percent">-45%</div>
+            <div class="sale-pill">Season Sale</div>
+          </div>
+          <div class="features-ribbon">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+              <div class="feature-text"><strong>Fast delivery</strong><span>At a good time for you</span></div>
             </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+              <div class="feature-text"><strong>Equipment insurance</strong><span>Protects financial cost</span></div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <div class="feature-text"><strong>Installment and credit</strong><span>Buy now and pay later</span></div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+              <div class="feature-text"><strong>Earn bonuses, rewards</strong><span>Discount and points</span></div>
+            </div>
+          </div>
         </SwiperSlide>
 
-        <SwiperSlide id="slide-2">
-            <div class="slide-content text-white">
-              <h1>Encuentra las mejores marcas y mejores productos</h1>
-              <p>Conoce mas antes de comprar lo que no necesitas.</p>
-              <NuxtLink to="/blog" class="btn btn-primary">Ver Mas</NuxtLink>
+        <SwiperSlide id="slide-2" class="hero-slide">
+          <div class="hero-overlay text-center">
+            <div class="sale-percent">-30%</div>
+            <div class="sale-pill">Spring Deals</div>
+          </div>
+          <div class="features-ribbon">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+              <div class="feature-text"><strong>Fast delivery</strong><span>At a good time for you</span></div>
             </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+              <div class="feature-text"><strong>Equipment insurance</strong><span>Protects financial cost</span></div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <div class="feature-text"><strong>Installment and credit</strong><span>Buy now and pay later</span></div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+              <div class="feature-text"><strong>Earn bonuses, rewards</strong><span>Discount and points</span></div>
+            </div>
+          </div>
         </SwiperSlide>
 
-        <SwiperSlide id="slide-3">
-            <div class="slide-content text-white">
-              <h1><em>Inspirate</em> con nuestro blog</h1>
-              <p>Encuentra la inspiracion que necesitas para crear los mejores espacios.</p>
-              <NuxtLink to="/contacto" class="btn btn-primary">Visita el blog</NuxtLink>
+        <SwiperSlide id="slide-3" class="hero-slide">
+          <div class="hero-overlay text-center">
+            <div class="sale-percent">-20%</div>
+            <div class="sale-pill">New Arrivals</div>
+          </div>
+          <div class="features-ribbon">
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+              <div class="feature-text"><strong>Fast delivery</strong><span>At a good time for you</span></div>
             </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+              <div class="feature-text"><strong>Equipment insurance</strong><span>Protects financial cost</span></div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-credit-card"></i></div>
+              <div class="feature-text"><strong>Installment and credit</strong><span>Buy now and pay later</span></div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon"><i class="fa-solid fa-gift"></i></div>
+              <div class="feature-text"><strong>Earn bonuses, rewards</strong><span>Discount and points</span></div>
+            </div>
+          </div>
         </SwiperSlide>
       </Swiper>
     </section>

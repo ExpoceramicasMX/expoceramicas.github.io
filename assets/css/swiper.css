@@ -38,25 +38,97 @@
 
   /* Header Slider */
   #header-slider {
-    height: 800px !important;
+    height: 600px !important;
     display: block;
     position: relative;
   }
-#header-slider #slide-1 {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
-    background-image: url('https://porcelanite.com.mx/wp-content/uploads/3149_PORCELANITE_LAURET_HQ.webp');
+  .hero-slide { position: relative; }
+  .hero-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+  }
+  .sale-percent {
+    font-weight: 800;
+    letter-spacing: -1px;
+    font-size: clamp(32px, 8vw, 96px);
+    text-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+  .sale-pill {
+    display: inline-block;
+    margin-top: 8px;
+    background: rgba(255,255,255,0.85);
+    color: #202020;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+  }
+  .features-ribbon {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 210;
+  }
+  .feature-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    min-width: 210px;
+  }
+  .feature-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #eaf2ff;
+    color: #3d73ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .feature-text { display: flex; flex-direction: column; }
+  .feature-text strong { font-size: 13px; line-height: 1.1; }
+  .feature-text span { font-size: 12px; color: #666; }
+  
+  /* Navigation Buttons */
+  #header-slider .swiper-button-next,
+  #header-slider .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.85);
+    color: #3d73ff;
+    border: 1px solid rgba(61,115,255,0.25);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+  #header-slider .swiper-button-next::after,
+  #header-slider .swiper-button-prev::after {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  #header-slider #slide-1 {
+    background-image: url('https://images.unsplash.com/photo-1520975954731-0eaaf3f0cc66?q=80&w=1600&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
   }
   #header-slider #slide-2 {
-    background: linear-gradient(135deg, #1e3a8a 0%, var(--primary-color) 100%);
-    background-image: url('https://porcelanite.com.mx/wp-content/uploads/CARRARA_NEW_PORCELANITE_HQ.webp');
+    background-image: url('https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1600&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
   }
   #header-slider #slide-3 {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
-    background-image: url('https://porcelanite.com.mx/wp-content/uploads/NATURAWOOD_20x90_NEW_PORCELANITE_HQ.webp');
+    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1600&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
   }

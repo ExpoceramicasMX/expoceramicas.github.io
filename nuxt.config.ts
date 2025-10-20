@@ -10,6 +10,13 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      ],
+      // Vercel Web Analytics & Speed Insights
+      script: [
+{ innerHTML: "window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };" },
+        { defer: true, src: "/_vercel/insights/script.js" },
+        { innerHTML: "window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };" },
+        { defer: true, src: "/_vercel/speed-insights/script.js" }
       ]
     }
   },
@@ -56,7 +63,8 @@ export default defineNuxtConfig({
     woocommerceSecret: process.env.NUXT_WOOCOMMERCE_SECRET,
     public: {
       // Variables públicas (cliente y servidor)
-      woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL
+      woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL,
+      gaId: process.env.NUXT_PUBLIC_GA_ID
     }
   },
   
