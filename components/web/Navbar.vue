@@ -32,17 +32,20 @@
 
         <!-- Icons / Actions -->
         <div class="d-flex align-items-center gap-3">
-          <a href="/login" class="icon-link" aria-label="Account">
+          <NuxtLink v-if="!user" to="/login" class="icon-link" aria-label="Account">
             <i class="fa-regular fa-user"></i>
-          </a>
+          </NuxtLink>
+          <NuxtLink v-else to="/my-account" class="icon-link" aria-label="My Account">
+            <i class="fa-solid fa-user-check"></i>
+          </NuxtLink>
           <a href="/favorites" class="icon-link" aria-label="Favorites">
             <i class="fa-regular fa-heart"></i>
           </a>
-          <a href="/cart" class="btn cart-cta d-flex align-items-center gap-2">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="fw-semibold">0,00 $</span>
-          </a>
-        </div>
+        <button type="button" class="btn cart-cta d-flex align-items-center gap-2" @click="isCartOpen = true" aria-haspopup="dialog" aria-expanded="false" aria-controls="cartDrawer">
+           <i class="fa-solid fa-cart-shopping"></i>
+           <span class="fw-semibold">{{ cartTotalLabel }}</span>
+         </button>
+          </div>
       </div>
     </div>
 
@@ -89,39 +92,60 @@
         </ul>
       </div>
     </div>
+   <CartDrawer v-model="isCartOpen" :items="cartItems" />
   </nav>
 </template>
 
-<script setup>
-import { ref, computed } from 'vue'
-import { useRouter } from '#imports'
+<script setup lang="ts">
+import CartDrawer from './CartDrawer.vue'
+import type { SupabaseClient, User } from '@supabase/supabase-js'
+const nuxtApp = useNuxtApp()
+const supabase = nuxtApp.$supabase as SupabaseClient | undefined
 
-const router = useRouter()
-const query = ref('')
-const selectedCategory = ref('all')
-const categories = ref([
-  'Pisos y Recubrimientos',
-  'Baños',
-  'Cocina',
-  'Griferia',
-  'Material de Instalación'
-])
+ const router = useRouter()
+ const query = ref('')
+ const selectedCategory = ref('all')
+ const categories = ref([
+   'Pisos y Recubrimientos',
+   'Baños',
+   'Cocina',
+   'Griferia',
+   'Material de Instalación'
+ ])
+const isCartOpen = ref(false)
+// Global simple state for cart items; replace with Pinia if needed
+const cartItems = useState('cartItems', () => [])
+const cartTotal = computed(() => (cartItems.value || []).reduce((s, it) => s + (Number(it.price) || 0) * (it.qty || 1), 0))
+const cartTotalLabel = computed(() => {
+ try { return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(cartTotal.value) } catch (e) { return `$${(cartTotal.value||0).toFixed(2)}` }
+})
 
-const categoryLabel = computed(() => selectedCategory.value === 'all' ? 'All categories' : selectedCategory.value)
+const user = ref<User | null>(null)
 
-function selectCategory(c) {
-  selectedCategory.value = c
-}
+onMounted(async () => {
+  try {
+    if (!supabase) return
+    const { data } = await supabase.auth.getUser()
+    user.value = data?.user || null
+  } catch {}
+})
 
-function onSearch() {
-  const q = query.value?.trim() || ''
-  const cat = selectedCategory.value
-  // Navigate to search page with query params. Implement results in pages/search.vue
-  router.push({ path: '/search', query: { q, category: cat } })
-}
+ const categoryLabel = computed(() => selectedCategory.value === 'all' ? 'All categories' : selectedCategory.value)
+
+ function selectCategory(c) {
+   selectedCategory.value = c
+ }
+
+ function onSearch() {
+   const q = query.value?.trim() || ''
+   const cat = selectedCategory.value
+   // Navigate to search page with query params. Implement results in pages/search.vue
+   router.push({ path: '/search', query: { q, category: cat } })
+ }
 </script>
 
 <style scoped>
+.web-navbar { background: #ffffff; }
 .web-navbar { background: #ffffff; }
 .topbar { background: #ffffff; }
 .navbar-brand { font-weight: 700; }

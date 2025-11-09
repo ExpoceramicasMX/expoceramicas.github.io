@@ -27,7 +27,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/image',
     '@nuxtjs/device',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/supabase'
   ],
   
   css: [
@@ -61,10 +62,15 @@ export default defineNuxtConfig({
     // Variables privadas (solo servidor)
     woocommerceKey: process.env.NUXT_WOOCOMMERCE_KEY,
     woocommerceSecret: process.env.NUXT_WOOCOMMERCE_SECRET,
+    // Supabase service role (solo servidor)
+    supabaseServiceKey: process.env.SUPABASE_SERVICE_ROLE || '',
     public: {
       // Variables públicas (cliente y servidor)
       woocommerceUrl: process.env.NUXT_PUBLIC_WOOCOMMERCE_URL,
-      gaId: process.env.NUXT_PUBLIC_GA_ID
+      gaId: process.env.NUXT_PUBLIC_GA_ID,
+      // Supabase públicos
+      supabaseUrl: process.env.NUXT_PUBLIC_SUPABASE_URL || '',
+      supabaseAnonKey: process.env.NUXT_PUBLIC_SUPABASE_ANON_KEY || ''
     }
   },
   
